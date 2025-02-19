@@ -1,0 +1,9 @@
+h1 {
+    color: green;
+    font-size: 30px;
+}
+button {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 5px;
+}
