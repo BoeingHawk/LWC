@@ -1,0 +1,9 @@
+Commands to create a LWC Web Component
+
+
+
+You need to create an sfdx project before, then further commands are displayed in VsCode.
+1 - Command + Shift + P on a Mac
+2 - SFDX: Create Project
+3 - Type SFDX: Create Lightning Web Component
+Or type anything you want but first create the project.
