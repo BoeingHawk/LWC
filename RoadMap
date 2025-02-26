@@ -1,0 +1,160 @@
+📌 LWC Learning Roadmap
+Here’s a step-by-step guide to learning Lightning Web Components (LWC) from scratch:
+
+1️⃣ Prerequisites (Before You Start LWC)
+Before diving into LWC, you should be comfortable with:
+
+📌 Web Development Basics
+✔️ HTML (Tags, Forms, Tables, Attributes)
+✔️ CSS (Selectors, Flexbox, Grid, Styling)
+✔️ JavaScript (Variables, Functions, Loops, Events, Objects, ES6 Features)
+
+🎯 Recommended Learning:
+
+HTML & CSS → w3schools.com
+JavaScript Basics → MDN JavaScript Guide
+📌 Salesforce Basics
+✔️ Salesforce Data Model (Objects, Fields, Relationships)
+✔️ Understanding Lightning Experience & Lightning App Builder
+✔️ SOQL Basics (Salesforce Object Query Language)
+✔️ Apex Basics (Methods, DML, Triggers)
+
+🎯 Recommended Learning:
+
+Salesforce Platform Basics → Trailhead Module
+✅ If you’re comfortable with these, you’re ready for LWC!
+
+2️⃣ Beginner Level: Core LWC Concepts
+Goal: Build simple Lightning Web Components and understand the basics.
+
+📌 1. Setting Up the Development Environment
+✔️ Install Salesforce CLI
+✔️ Install VS Code & Salesforce Extensions
+✔️ Set up a Salesforce Developer Org
+✔️ Authenticate with Salesforce using:
+
+sh
+Copy
+Edit
+sf org login web --set-default-dev-hub
+🎯 Recommended Learning:
+
+Salesforce DX Setup → Trailhead
+📌 2. Creating Your First LWC Component
+✔️ Understand the LWC Folder Structure
+✔️ Learn about HTML, JavaScript, and Meta XML files
+✔️ Deploy LWC to Salesforce
+✔️ Add LWC to a Lightning Page
+
+🎯 Hands-On Exercise:
+✅ Build a "Hello, World!" LWC Component
+✅ Use button click events to change text dynamically
+
+📌 3. Data Binding & Event Handling
+✔️ @track vs Reactive Properties (this.property)
+✔️ @api (Public Properties & Parent-Child Communication)
+✔️ Handling Events (onchange, onclick, input)
+
+🎯 Hands-On Exercise:
+✅ Create an input field where the user types their name and updates a greeting dynamically.
+
+📌 4. Conditional Rendering & Iteration
+✔️ if:true / if:false for conditional display
+✔️ for:each loop for lists
+✔️ iterator for advanced loops
+
+🎯 Hands-On Exercise:
+✅ Display a list of items dynamically (e.g., a to-do list).
+
+3️⃣ Intermediate Level: Working with Salesforce Data
+Goal: Fetch & display Salesforce records in LWC.
+
+📌 5. Calling Apex in LWC
+✔️ Use @wire to call Apex methods
+✔️ Use Imperative Apex Calls
+✔️ Handle loading states & errors
+
+🎯 Hands-On Exercise:
+✅ Fetch Account records from Apex and display them in LWC.
+
+📌 6. Using Lightning Data Service (LDS)
+✔️ Fetch records using getRecord
+✔️ Use getFieldValue() to extract field data
+✔️ Create, Update, Delete Records with LDS
+
+🎯 Hands-On Exercise:
+✅ Create an editable Account Detail component using LDS.
+
+📌 7. Working with Lightning Data Table
+✔️ Use lightning-datatable to display records
+✔️ Implement Sorting, Filtering, and Inline Editing
+
+🎯 Hands-On Exercise:
+✅ Build a table to display Contact records with an Edit & Delete button.
+
+4️⃣ Advanced Level: LWC Performance & Best Practices
+Goal: Improve performance & make your components reusable.
+
+📌 8. Parent-Child Communication
+✔️ Pass data from Parent to Child using @api
+✔️ Call Child Methods from the Parent Component
+
+🎯 Hands-On Exercise:
+✅ Build a Parent-Child communication example with dynamic updates.
+
+📌 9. Navigation & Messaging in Salesforce
+✔️ NavigationMixin (Redirect to Record Pages, List Views)
+✔️ Lightning Message Service (LMS) (Cross-component communication)
+
+🎯 Hands-On Exercise:
+✅ Create a button to navigate to a Contact record.
+
+📌 10. Working with External APIs
+✔️ Fetch data from REST APIs inside LWC
+✔️ Handle CORS Issues & Security
+
+🎯 Hands-On Exercise:
+✅ Fetch weather data from an external API and display it in LWC.
+
+5️⃣ Expert Level: Advanced Topics & Deployment
+Goal: Deploy LWC in production & work with enterprise-level apps.
+
+📌 11. LWC Testing & Debugging
+✔️ Use Lightning Debug Mode
+✔️ Write Jest Tests for LWC
+
+🎯 Hands-On Exercise:
+✅ Write unit tests for a simple LWC component.
+
+📌 12. Packaging & Deploying LWC
+✔️ Create a Second-Generation Package (2GP)
+✔️ Deploy LWC to Production or Sandbox
+
+🎯 Hands-On Exercise:
+✅ Package your LWC and install it in another Salesforce Org.
+
+📌 Final Capstone Project
+🎯 Build a "Task Manager" App in LWC
+✔️ Create Task records with a form
+✔️ Display tasks in a data table
+✔️ Mark tasks as Complete
+✔️ Store data in Salesforce using Apex
+
+🚀 Summary: Your LWC Learning Path
+✅ Beginner
+✔️ HTML, JavaScript, Salesforce Basics
+✔️ Creating & Deploying LWC
+✔️ Data Binding, Event Handling, Loops
+
+✅ Intermediate
+✔️ Fetching Data with Apex & LDS
+✔️ Displaying Salesforce records in Lightning Data Tables
+✔️ Parent-Child Communication
+
+✅ Advanced
+✔️ Navigation & Message Service
+✔️ Calling External APIs
+✔️ Testing & Debugging
+
+🎯 Final Step: Build a real-world LWC project to master your skills!
+
