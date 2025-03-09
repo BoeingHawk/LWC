@@ -1,0 +1,202 @@
+**Lightning Web Components (LWC) - Beginner's Guide**
+
+---
+
+## **1. What is LWC?**
+Lightning Web Components (LWC) is a modern Salesforce UI framework built on **standard web technologies** like HTML, JavaScript, and CSS. It provides a lightweight and fast alternative to Aura components.
+
+---
+
+## **2. Key Technologies Used in LWC**
+LWC is based on core web standards:
+- **HTML** → For structure (UI).
+- **CSS** → For styling the UI.
+- **JavaScript (JS)** → For logic and interactivity.
+- **Apex (Optional)** → For server-side logic.
+- **Base Lightning Components** → Prebuilt UI components by Salesforce.
+
+---
+
+## **3. LWC vs Aura Components**
+| Feature | LWC | Aura |
+|---------|-----|------|
+| Performance | Faster (Modern JS) | Slower (Heavy Framework) |
+| Learning Curve | Easier (Uses Standard Web Tech) | More Complex |
+| Component Reusability | High | Moderate |
+
+---
+
+## **4. Basic LWC Folder Structure**
+Each LWC component consists of **three main files**:
+```
+myComponent/
+│── myComponent.html  --> UI Structure  
+│── myComponent.js  --> JavaScript Logic  
+│── myComponent.js-meta.xml  --> Configuration File  
+```
+Optional files:
+- `myComponent.css` → For styling.
+- `myComponent.test.js` → For unit testing.
+
+---
+
+## **5. Creating a Basic LWC Component**
+
+### **Step 1: Create the Component**
+Use Salesforce CLI or Visual Studio Code (VS Code):
+```sh
+sfdx force:lightning:component:create -n helloWorld -d force-app/main/default/lwc
+```
+
+### **Step 2: Write Code for LWC Component**
+🔹 **HTML File (helloWorld.html)**
+```html
+<template>
+    <lightning-card title="Hello LWC">
+        <p>Hello, {greeting}!</p>
+        <lightning-button label="Click Me" onclick={handleClick}></lightning-button>
+    </lightning-card>
+</template>
+```
+
+🔹 **JavaScript File (helloWorld.js)**
+```js
+import { LightningElement, track } from 'lwc';
+export default class HelloWorld extends LightningElement {
+    @track greeting = "World";
+    handleClick() {
+        this.greeting = "Salesforce";
+    }
+}
+```
+
+🔹 **Meta Configuration File (helloWorld.js-meta.xml)**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="helloWorld">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+</LightningComponentBundle>
+```
+
+---
+
+## **6. Important LWC Concepts**
+
+### **1️⃣ Decorators in LWC**
+| Decorator | Purpose |
+|-----------|---------|
+| `@track` | Tracks reactive changes in variables. |
+| `@api` | Makes properties public and accessible from parent components. |
+| `@wire` | Fetches Salesforce data from Apex. |
+
+### **2️⃣ Data Binding in LWC**
+🔹 **One-Way Data Binding (JS → UI)**
+```html
+<p>{greeting}</p>
+```
+
+🔹 **Two-Way Data Binding (User Input → JS Variable)**
+```html
+<lightning-input label="Enter Name" value={name} onchange={handleChange}></lightning-input>
+```
+```js
+handleChange(event) {
+    this.name = event.target.value;
+}
+```
+
+### **3️⃣ Event Handling in LWC**
+🔹 **Handling Button Clicks**
+```html
+<lightning-button label="Click Me" onclick={handleClick}></lightning-button>
+```
+```js
+handleClick() {
+    console.log("Button clicked!");
+}
+```
+
+🔹 **Custom Events (Child → Parent Communication)**
+- **Child Component (`childComponent.js`)**
+```js
+handleClick() {
+    const event = new CustomEvent('mycustomevent', { detail: "Hello Parent!" });
+    this.dispatchEvent(event);
+}
+```
+- **Parent Component (`parentComponent.html`)**
+```html
+<template>
+    <c-child-component onmycustomevent={handleCustomEvent}></c-child-component>
+</template>
+```
+- **Parent Component (`parentComponent.js`)**
+```js
+handleCustomEvent(event) {
+    console.log(event.detail);
+}
+```
+
+---
+
+## **7. Fetching Data from Salesforce using Apex**
+🔹 **Apex Controller (ContactController.cls)**
+```apex
+public with sharing class ContactController {
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> getContacts() {
+        return [SELECT Id, Name, Email FROM Contact LIMIT 10];
+    }
+}
+```
+🔹 **LWC Component (`contactList.js`)**
+```js
+import { LightningElement, wire } from 'lwc';
+import getContacts from '@salesforce/apex/ContactController.getContacts';
+export default class ContactList extends LightningElement {
+    @wire(getContacts) contacts;
+}
+```
+🔹 **LWC HTML (`contactList.html`)**
+```html
+<template>
+    <template if:true={contacts.data}>
+        <template for:each={contacts.data} for:item="contact">
+            <p key={contact.Id}>{contact.Name} - {contact.Email}</p>
+        </template>
+    </template>
+</template>
+```
+
+---
+
+## **8. Where Can You Use LWC?**
+✅ **Record Pages** (Lightning App Builder).  
+✅ **Home & App Pages**.  
+✅ **Community Cloud (Experience Builder)**.  
+✅ **Embedded in Visualforce Pages**.  
+
+---
+
+## **9. Next Steps to Learn LWC**
+1️⃣ **Trailhead Modules:**
+   - [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components)  
+   - [Lightning Web Components Basics](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics)  
+2️⃣ **Practice by Building Small Components.**  
+3️⃣ **Use Salesforce Playground or Developer Edition for Hands-on Coding.**  
+
+---
+
+**🔹 Summary**
+- LWC is a **modern, faster, and web-standard-based UI framework** for Salesforce.
+- Uses **HTML, CSS, JavaScript**, and interacts with Apex.
+- Supports **event handling, API integration, and dynamic UI development**.
+
+Would you like additional examples for any specific use case? 😊
+
