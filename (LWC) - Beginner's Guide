@@ -198,5 +198,4 @@ export default class ContactList extends LightningElement {
 - Uses **HTML, CSS, JavaScript**, and interacts with Apex.
 - Supports **event handling, API integration, and dynamic UI development**.
 
-Would you like additional examples for any specific use case? 😊
 
