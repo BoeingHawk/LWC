@@ -1,0 +1,96 @@
+## **Topic 1: Variables & Scope (`let`, `const`, `var`)
+
+### **1️⃣ What Are Variables?**  
+Variables are **containers** that store data. In JavaScript, we use three keywords to declare variables:  
+- `var` (older, avoid using it)  
+- `let` (recommended for variables that can change)  
+- `const` (for variables that should never change)  
+
+---
+
+## **2️⃣ Difference Between `var`, `let`, and `const`**  
+
+| Feature                     | `var`                    | `let`                       | `const`                     |
+|-----------------------------|--------------------------|-----------------------------|-----------------------------|
+| Scope                       | Function-scoped          | Block-scoped                | Block-scoped                |
+| Can be Re-declared?         | ✅ Yes                   | ❌ No                       | ❌ No                       |
+| Can be Updated?             | ✅ Yes                   | ✅ Yes                      | ❌ No                       |
+| Hoisting Behavior           | Hoisted with `undefined` | Hoisted but not initialized | Hoisted but not initialized |
+
+
+### **What is Hoisting?**  
+Hoisting means JavaScript **moves variable declarations to the top** before running the code. But `var` behaves differently from `let` and `const`.
+
+---
+
+## **3️⃣ Examples with Explanation (Word by Word)**  
+
+### **Example 1: `var` (Avoid Using It)**
+
+console.log(name);  // ❓ What happens here?
+var name = "Pulkit";
+console.log(name);  // Pulkit
+
+### **Explanation:**  
+1. **First line:** We try to `console.log(name)` before declaring it.   
+   - Because `var` is **hoisted**, JavaScript moves the declaration to the top but sets it to `undefined`.  
+   - So this prints: `undefined`.  
+2. **Second line:** `var name = "Pulkit";` assigns `"Pulkit"` to `name`.  
+3. **Third line:** `console.log(name);` now prints `"Pulkit"`.  
+
+💡 **Best Practice:** **Never use `var`. Always use `let` or `const`.**
+
+---
+
+### **Example 2: `let` (Recommended)**
+
+console.log(age); // ❌ ReferenceError: Cannot access 'age' before initialization
+let age = 26;
+console.log(age); // ✅ 26
+
+### **Explanation:**  
+1. `console.log(age);` gives **ReferenceError** because `let` is hoisted but **not initialized**.  
+2. `let age = 26;` initializes `age`.  
+3. `console.log(age);` now works and prints `26`.  
+
+---
+
+### **Example 3: `const` (Best for Constants)**
+
+const country = "India";
+country = "USA";  // ❌ TypeError: Assignment to constant variable
+
+### **Explanation:**  
+1. `const country = "India";` declares `country` with `"India"`.  
+2. Trying to change it to `"USA"` gives a **TypeError** because `const` **cannot be reassigned**.  
+
+💡 **Best Practice:** Use `const` **whenever possible** unless you need to change the variable later.
+
+---
+
+## **4️⃣ When to Use What? (Best Practices)**
+✅ Use **`const`** for values that never change (e.g., API keys, default settings).  
+✅ Use **`let`** for variables that might change (e.g., loop counters, user inputs).  
+❌ **Avoid `var`** completely (outdated, bad scoping).  
+
+---
+
+### **5️⃣ Real-World Example: Form Data Handling**
+
+function handleFormSubmission() {
+    let username = "Pulkit"; // Can change based on user input
+    const maxAttempts = 3;   // Fixed value, should never change
+
+    username = "John";  // ✅ Allowed (let)
+    maxAttempts = 5;    // ❌ Error! (const cannot be reassigned)
+}
+
+
+---
+
+
+
+
+
+
+
