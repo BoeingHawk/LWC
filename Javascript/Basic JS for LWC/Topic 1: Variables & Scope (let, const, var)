@@ -13,15 +13,15 @@ Variables are **containers** that store data. In JavaScript, we use three keywor
 | Feature                     | `var`                    | `let`                       | `const`                     |
 |-----------------------------|--------------------------|-----------------------------|-----------------------------|
 | Scope                       | Function-scoped          | Block-scoped                | Block-scoped                |
-| Can be Re-declared?         | ✅ Yes                   | ❌ No                       | ❌ No                       |
-| Can be Updated?             | ✅ Yes                   | ✅ Yes                      | ❌ No                       |
+| Can be Re-declared?         | ✅ Yes                   | ❌ No                       | ❌ No                        |
+| Can be Updated?             | ✅ Yes                   | ✅ Yes                      | ❌ No                        |
 | Hoisting Behavior           | Hoisted with `undefined` | Hoisted but not initialized | Hoisted but not initialized |
 
 
 ### **What is Hoisting?**  
 Hoisting means JavaScript **moves variable declarations to the top** before running the code. But `var` behaves differently from `let` and `const`.
 
----
+--
 
 ## **3️⃣ Examples with Explanation (Word by Word)**  
 
