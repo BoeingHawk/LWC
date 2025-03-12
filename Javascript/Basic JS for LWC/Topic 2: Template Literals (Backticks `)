@@ -1,0 +1,74 @@
+## **Topic 2: Template Literals (Backticks `` ` ``)**  
+
+### **1️⃣ What Are Template Literals?**  
+Template literals are a modern way to handle strings in JavaScript. They allow:  
+- Multi-line strings  
+- String interpolation (embedding expressions inside strings)  
+- Easier readability  
+
+Unlike regular strings (`""` or `''`), template literals use **backticks** (`` ` ``).
+
+---
+
+### **2️⃣ Syntax & Basic Usage**
+```javascript
+let name = "Pulkit";
+console.log(`Hello, my name is ${name}.`);
+```
+### **Explanation (Word by Word)**
+1. We define a variable `name` with `"Pulkit"`.  
+2. We use **backticks** (`` ` ``) instead of single or double quotes.  
+3. `${name}` is **interpolation**, which **inserts the value of `name`** inside the string.  
+4. The output will be:  
+   ```
+   Hello, my name is Pulkit.
+   ```
+
+---
+
+### **3️⃣ Multi-line Strings Without Concatenation**
+Before template literals, multi-line strings required `\n` or `+`:
+```javascript
+let oldMethod = "This is line 1.\n" +
+                "This is line 2.";
+```
+With template literals, it's much cleaner:
+```javascript
+let newMethod = `This is line 1.
+This is line 2.`;
+```
+
+---
+
+### **4️⃣ Expressions Inside Template Literals**
+You can embed any **expression** inside `${}`:
+```javascript
+let a = 10, b = 20;
+console.log(`The sum is ${a + b}.`); // Output: The sum is 30.
+```
+Even function calls:
+```javascript
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(`${greet("Pulkit")}`); // Output: Hello, Pulkit!
+```
+
+---
+
+### **5️⃣ Best Practices**
+✔ Always **use template literals** when dealing with **dynamic values**.  
+✔ Prefer them for **multi-line** strings instead of `\n`.  
+✔ Use `${}` **only when necessary** to keep the code readable.  
+
+---
+
+## ✅ **Your Task**
+1. Write a template literal that includes:  
+   - Your name  
+   - A multi-line string  
+   - An expression inside `${}`  
+2. Share your output with me! 🚀  
+
+Let me know if you have any doubts, and we’ll move to the next topic: **Arrow Functions**. 🔥
+
