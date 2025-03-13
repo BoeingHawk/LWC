@@ -1,0 +1,68 @@
+## **Topic 3: Arrow Functions (=>)**
+
+### **1️⃣ What Are Arrow Functions?**  
+Arrow functions are a **shorter** way to write functions in JavaScript. They were introduced in **ES6** and help make code **cleaner and more readable**.  
+
+#### **Syntax (Basic Format)**
+
+// Traditional function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+
+
+💡 **Key Takeaways:**  
+✅ **Shorter Syntax** → No need for `function` keyword.  
+✅ **Automatic `return`** → If the function is a **one-liner**, it **automatically** returns the result.  
+✅ **No `this` Binding** → Useful for working with objects and event listeners.
+
+---
+
+### **2️⃣ Different Ways to Use Arrow Functions**
+#### **Example 1: Single Line Function**
+
+const square = (num) => num * num;
+console.log(square(4)); // ✅ Output: 16
+
+💡 **No need for `{}` or `return` if there’s only one expression.**  
+
+#### **Example 2: With Multiple Parameters**
+
+const multiply = (a, b) => a * b;
+console.log(multiply(3, 5)); // ✅ Output: 15
+
+
+#### **Example 3: Arrow Function with `return`**
+
+const addNumbers = (a, b) => {
+    let sum = a + b;
+    return sum;
+};
+console.log(addNumbers(2, 3)); // ✅ Output: 5
+
+
+#### **Example 4: Arrow Function with One Parameter**
+
+const greet = name => `Hello, ${name}!`;
+console.log(greet("Pulkit")); // ✅ Output: Hello, Pulkit!
+
+
+#### **Example 5: Arrow Functions & Objects**
+
+const user = {
+    name: "Pulkit",
+    greet: function() {
+        setTimeout(() => {
+            console.log(`Hello, ${this.name}`);
+        }, 1000);
+    }
+};
+user.greet(); // ✅ Output: Hello, Pulkit
+
+
+---
+
+
