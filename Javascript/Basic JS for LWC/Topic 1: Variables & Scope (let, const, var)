@@ -85,12 +85,4 @@ function handleFormSubmission() {
     maxAttempts = 5;    // ❌ Error! (const cannot be reassigned)
 }
 
-
 ---
-
-
-
-
-
-
-
