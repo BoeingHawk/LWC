@@ -11,10 +11,10 @@ Unlike regular strings (`""` or `''`), template literals use **backticks** (`` `
 ---
 
 ### **2️⃣ Syntax & Basic Usage**
-```javascript
+
 let name = "Pulkit";
 console.log(`Hello, my name is ${name}.`);
-```
+
 ### **Explanation (Word by Word)**
 1. We define a variable `name` with `"Pulkit"`.  
 2. We use **backticks** (`` ` ``) instead of single or double quotes.  
@@ -28,31 +28,31 @@ console.log(`Hello, my name is ${name}.`);
 
 ### **3️⃣ Multi-line Strings Without Concatenation**
 Before template literals, multi-line strings required `\n` or `+`:
-```javascript
+
 let oldMethod = "This is line 1.\n" +
                 "This is line 2.";
-```
+
 With template literals, it's much cleaner:
-```javascript
+
 let newMethod = `This is line 1.
 This is line 2.`;
-```
+
 
 ---
 
 ### **4️⃣ Expressions Inside Template Literals**
 You can embed any **expression** inside `${}`:
-```javascript
+
 let a = 10, b = 20;
 console.log(`The sum is ${a + b}.`); // Output: The sum is 30.
-```
+
 Even function calls:
-```javascript
+
 function greet(name) {
     return `Hello, ${name}!`;
 }
 console.log(`${greet("Pulkit")}`); // Output: Hello, Pulkit!
-```
+
 
 ---
 
@@ -63,12 +63,4 @@ console.log(`${greet("Pulkit")}`); // Output: Hello, Pulkit!
 
 ---
 
-## ✅ **Your Task**
-1. Write a template literal that includes:  
-   - Your name  
-   - A multi-line string  
-   - An expression inside `${}`  
-2. Share your output with me! 🚀  
-
-Let me know if you have any doubts, and we’ll move to the next topic: **Arrow Functions**. 🔥
 
