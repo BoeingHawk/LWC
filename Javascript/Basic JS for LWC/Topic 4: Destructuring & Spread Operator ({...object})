@@ -8,7 +8,7 @@ Destructuring allows you to extract values from **arrays** and **objects** into 
 ## **2️⃣ Destructuring Objects**
 
 ### ✅ **Basic Object Destructuring**
-```javascript
+
 const user = {
   username: "pulkit26",
   email: "pulkit@example.com",
@@ -17,87 +17,87 @@ const user = {
 
 const { username, email, country } = user;
 console.log(username, email, country); // pulkit26 pulkit@example.com India
-```
+
 
 ### ✅ **Renaming Variables While Destructuring**
-```javascript
+
 const { username: userID, email: userEmail } = user;
 console.log(userID, userEmail); // pulkit26 pulkit@example.com
-```
+
 
 ### ✅ **Setting Default Values While Destructuring**
-```javascript
+
 const { username, email = "not available" } = user;
 console.log(username, email); // pulkit26 not available
-```
+
 
 ---
 
 ## **3️⃣ Destructuring Arrays**
 
 ### ✅ **Basic Array Destructuring**
-```javascript
+
 const numbers = [10, 20, 30];
 const [first, second, third] = numbers;
 console.log(first, second, third); // 10 20 30
-```
+
 
 ### ✅ **Skipping Elements While Destructuring**
-```javascript
+
 const colors = ["red", "green", "blue", "yellow"];
 const [, secondColor, , fourthColor] = colors;
 console.log(secondColor, fourthColor); // green yellow
-```
+
 
 ### ✅ **Swapping Variables Using Array Destructuring**
-```javascript
+
 let a = 1, b = 2;
 [a, b] = [b, a];
 console.log(a, b); // 2 1
-```
+
 
 ---
 
 ## **4️⃣ Spread Operator (`...`)**
 
 ### ✅ **Copying an Array Using Spread**
-```javascript
+
 const originalArray = [1, 2, 3];
 const newArray = [...originalArray, 4, 5];
 console.log(newArray); // [1, 2, 3, 4, 5]
-```
+
 
 ### ✅ **Merging Two Arrays Using Spread**
-```javascript
+
 const mergedArray = [...arr1, ...arr2];
 console.log(mergedArray); // [1, 2, 3, 4, 5, 6]
-```
+
 
 ### ✅ **Copying an Object Using Spread**
-```javascript
+
 const person = { name: "Pulkit", age: 26 };
 const personCopy = { ...person };
 console.log(personCopy); // { name: "Pulkit", age: 26 }
-```
+
 
 ### ✅ **Merging Objects Using Spread**
-```javascript
+
 const mergedUser = { ...user, ...location };
 console.log(mergedUser);
 // { name: "Pulkit", email: "pulkit@example.com", city: "Delhi", country: "India" }
-```
+
 
 ---
 
 ## **5️⃣ Rest Operator (`...rest`)**
 
 ### ✅ **Rest Operator in Function Parameters**
-```javascript
+
 function sum(...numbers) {
   return numbers.reduce((acc, num) => acc + num, 0);
 }
 console.log(sum(1, 2, 3, 4, 5)); // 15
-```
+
 
 ---
 
@@ -111,18 +111,14 @@ console.log(sum(1, 2, 3, 4, 5)); // 15
 ## ✅ **Your Task**
 Try these **3 small exercises**:
 1️⃣ Extract `title` and `price` from this object:
-   ```javascript
+
    const product = { title: "Laptop", price: 50000, brand: "Dell" };
-   ```  
+  
 2️⃣ Use spread (`...`) to merge these arrays:
-   ```javascript
+
    const fruits = ["apple", "banana"];
    const vegetables = ["carrot", "tomato"];
-   ```  
+
 3️⃣ Write a function that accepts **any number of arguments** and returns the **largest number** using the rest operator (`...rest`).
 
 ---
-
-🔹 **Next Topic:** Optional Chaining (`?.`) & Nullish Coalescing (`??`)  
-Let me know when you're ready! 😃
-
