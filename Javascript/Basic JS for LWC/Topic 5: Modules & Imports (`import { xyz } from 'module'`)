@@ -155,12 +155,12 @@ fetchData();
 
 ## **5️⃣ Real-World Example: Fetching Data from an API**
 ### **Using `.then()`**
-```javascript
+
 fetch("https://jsonplaceholder.typicode.com/posts/1")
     .then(response => response.json())  // Convert response to JSON
     .then(data => console.log(data))    // Log the data
     .catch(error => console.log(error));  // Handle errors
-```
+
 
 ### **Using Async/Await**
 
@@ -175,7 +175,7 @@ async function getPost() {
 }
 
 getPost();
-```
+
 💡 **Which One to Use?**  
 ✅ Use `.then()` when chaining multiple Promises.  
 ✅ Use `async/await` for cleaner, **easier-to-read** code.  
@@ -185,14 +185,14 @@ getPost();
 ## **6️⃣ Promise.all() – Running Multiple Promises in Parallel**
 If you have multiple Promises that can run **at the same time**, use `Promise.all()`.
 
-```javascript
+
 const promise1 = fetch("https://jsonplaceholder.typicode.com/posts/1").then(res => res.json());
 const promise2 = fetch("https://jsonplaceholder.typicode.com/posts/2").then(res => res.json());
 
 Promise.all([promise1, promise2])
     .then(results => console.log(results))
     .catch(error => console.log(error));
-```
+
 ✅ **Faster Execution** – Runs both Promises at the same time.  
 ✅ **Fails if Any Promise Fails** – If **one** Promise rejects, the whole `Promise.all()` fails.
 
@@ -205,6 +205,4 @@ Promise.all([promise1, promise2])
 
 ---
 
-🔹 **Next Topic:** Event Loop & Microtasks 🚀  
-Let me know when you're ready! 😊
 
