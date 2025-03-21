@@ -1,0 +1,210 @@
+## **Topic 5: Modules & Imports (`import { xyz } from 'module'`)
+
+### **1️⃣ What Are Modules?**
+Modules allow us to break JavaScript code into **separate files**, making it more organized and reusable. Using **ES6 Modules**, we can:
+✅ Export functions, objects, or variables from one file.
+✅ Import them into another file.
+
+---
+
+## **2️⃣ Exporting & Importing in JavaScript**
+
+### **A. Named Export & Import** (Used when exporting multiple items)
+#### **Exporting (`math.js`)**
+
+export const add = (a, b) => a + b;
+export const multiply = (a, b) => a * b;
+
+#### **Importing (`app.js`)**
+
+import { add, multiply } from "./math.js";
+console.log(add(2, 3)); // 5
+console.log(multiply(2, 3)); // 6
+
+✅ **Use curly braces** `{}` while importing named exports.
+
+---
+
+### **B. Default Export & Import** (Used when exporting only one item)
+#### **Exporting (`greet.js`)**
+
+export default function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+#### **Importing (`app.js`)**
+
+import greet from "./greet.js";
+console.log(greet("Pulkit")); // Hello, Pulkit!
+
+✅ **No curly braces** needed for default imports.
+✅ **You can rename** the imported function.
+
+---
+
+### **C. Renaming Imports & Exports**
+#### **Renaming Export (`math.js`)**
+
+export { add as sum, multiply as product };
+
+#### **Renaming Import (`app.js`)**
+
+import { sum, product } from "./math.js";
+
+
+✅ Use **`as`** to rename exports or imports.
+
+---
+
+## **3️⃣ Dynamic Imports (`import()`)**
+If we don’t want to load a module **until needed**, we use `import()` (also called **lazy loading**).
+
+async function loadModule() {
+    let { add } = await import("./math.js");
+    console.log(add(4, 5)); // 9
+}
+loadModule();
+
+✅ Used in **code-splitting** to improve performance.
+
+---
+
+## **4️⃣ Best Practices**
+✔️ Use **named exports** when exporting multiple things.
+✔️ Use **default export** when exporting only one thing.
+✔️ Use **dynamic imports** for large applications.
+✔️ Always specify **relative paths** (`./module.js`).
+
+---
+
+## ✅ **Your Task**
+1. Create `math.js` with **two functions** (addition & subtraction).
+2. Export them using **named exports**.
+3. Import them into `app.js` and use them.
+
+Once you complete this, we’ll move to **Topic 6: Promises & Async/Await** 🚀
+
+---
+
+## **Topic 6: Promises & Async/Await**
+
+JavaScript is **asynchronous**, meaning it can execute multiple tasks **without waiting** for one to finish before starting another. To handle asynchronous operations, we use **Promises** and **Async/Await**.
+
+---
+
+## **1️⃣ What is a Promise?**  
+A **Promise** is an object representing a task that will either **resolve** (success) or **reject** (failure) in the future.  
+
+### **Promise States**
+| State       | Meaning |
+|------------|---------|
+| **Pending**  | Initial state (not yet completed) |
+| **Fulfilled** | Operation completed successfully |
+| **Rejected**  | Operation failed |
+
+### **2️⃣ Creating a Promise**
+
+const myPromise = new Promise((resolve, reject) => {
+    let success = true;  // Try changing this to false
+
+    setTimeout(() => {
+        if (success) {
+            resolve("✅ Task completed!");
+        } else {
+            reject("❌ Task failed!");
+        }
+    }, 2000);  // Simulating a 2-second delay
+});
+
+
+---
+
+### **3️⃣ Handling Promises with `.then()` and `.catch()`**
+
+myPromise
+    .then((result) => console.log(result))  // ✅ Success
+    .catch((error) => console.log(error));  // ❌ Error
+
+
+💡 **Best Practice:** Always handle `.catch()` to avoid uncaught errors.
+
+---
+
+## **4️⃣ Async/Await: A Better Way to Handle Promises**  
+Instead of `.then()` and `.catch()`, we use `async` and `await` to write **cleaner and readable** code.
+
+### **Example: Converting a Promise to Async/Await**
+
+async function fetchData() {
+    try {
+        let result = await myPromise;  // Waits until the Promise resolves
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchData();
+
+
+💡 **Key Points:**  
+✅ `await` pauses execution **until** the Promise resolves.  
+✅ `try/catch` handles errors more cleanly than `.catch()`.  
+
+---
+
+## **5️⃣ Real-World Example: Fetching Data from an API**
+### **Using `.then()`**
+```javascript
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => response.json())  // Convert response to JSON
+    .then(data => console.log(data))    // Log the data
+    .catch(error => console.log(error));  // Handle errors
+```
+
+### **Using Async/Await**
+
+async function getPost() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getPost();
+```
+💡 **Which One to Use?**  
+✅ Use `.then()` when chaining multiple Promises.  
+✅ Use `async/await` for cleaner, **easier-to-read** code.  
+
+---
+
+## **6️⃣ Promise.all() – Running Multiple Promises in Parallel**
+If you have multiple Promises that can run **at the same time**, use `Promise.all()`.
+
+```javascript
+const promise1 = fetch("https://jsonplaceholder.typicode.com/posts/1").then(res => res.json());
+const promise2 = fetch("https://jsonplaceholder.typicode.com/posts/2").then(res => res.json());
+
+Promise.all([promise1, promise2])
+    .then(results => console.log(results))
+    .catch(error => console.log(error));
+```
+✅ **Faster Execution** – Runs both Promises at the same time.  
+✅ **Fails if Any Promise Fails** – If **one** Promise rejects, the whole `Promise.all()` fails.
+
+---
+
+### ✅ **Your Task**
+1️⃣ Create a Promise that resolves after 3 seconds and logs `"Task Done!"`.  
+2️⃣ Convert it into an **async function** using `await`.  
+3️⃣ Fetch data from `https://jsonplaceholder.typicode.com/users/1` using **both `.then()` and `async/await`**.  
+
+---
+
+🔹 **Next Topic:** Event Loop & Microtasks 🚀  
+Let me know when you're ready! 😊
+
