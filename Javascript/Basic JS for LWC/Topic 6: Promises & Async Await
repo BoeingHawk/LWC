@@ -110,11 +110,4 @@ Promise.all([promise1, promise2])
 
 ---
 
-### ✅ **Your Task**
-1️⃣ Create a Promise that resolves after 3 seconds and logs `"Task Done!"`.  
-2️⃣ Convert it into an **async function** using `await`.  
-3️⃣ Fetch data from `https://jsonplaceholder.typicode.com/users/1` using **both `.then()` and `async/await`**.  
-
----
-
 
