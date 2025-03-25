@@ -5,7 +5,7 @@ Modules allow us to break JavaScript code into **separate files**, making it mor
 ✅ Export functions, objects, or variables from one file.
 ✅ Import them into another file.
 
----
+
 
 ## **2️⃣ Exporting & Importing in JavaScript**
 
