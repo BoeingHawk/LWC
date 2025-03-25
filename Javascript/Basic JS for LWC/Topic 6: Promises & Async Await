@@ -109,5 +109,3 @@ Promise.all([promise1, promise2])
 ✅ **Fails if Any Promise Fails** – If **one** Promise rejects, the whole `Promise.all()` fails.
 
 ---
-
-
