@@ -1,0 +1,32 @@
+//var has global scope
+
+//let has block scope
+
+//const also has block scope
+
+
+
+let greet = "Hello"; //here scope is global because declared at the top
+var greet1 = "Hello1"; //global scope by default for var
+
+function printHello(){
+    let greet2 = "Hello2"
+    const pi = 3.14;
+    console.log(greet); //Hello
+    console.log(greet1); //Hello1
+    console.log(greet2); //Hello2
+    console.log(pi); //3.14
+    
+}
+
+printHello()
+
+console.log(greet+" let"); //Hello (value was printed because the scope of var is global, as let is defined at the top)
+
+console.log(greet1+" var"); //Hello1 (value was printed because the scope of var is global)
+
+console.log(pi); //error: ReferenceError: pi is not defined (const is also block scope, so it will not print value outside function)
+
+console.log(greet2); //error: ReferenceError: greet2 is not defined (greet2 was declared inside function and is only accessible within the function block)
+
+
