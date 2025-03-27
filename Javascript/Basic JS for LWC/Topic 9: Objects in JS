@@ -31,4 +31,4 @@ document.getElementById("demo").innerHTML = person;
 
 
 //output: [object Object] 
-//because only object is getting printed, but in console output will be different
+//because only object is getting printed, but in console output will be different, it will show the entire object along with the properties.
