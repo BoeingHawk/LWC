@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pulkit's Document</title>
+</head>
+
+
+<body>
+  <p id="demo"> Hi this is a HTML page and I am using JS to practise.</p>
+
+<script>
+
+const person = {
+    name: "Pulkit",
+    age: 26,
+    city: "BLR"
+};
+
+document.getElementById("demo").innerHTML = person;
+
+//console.log(person);
+
+
+</script>
+
+</body>
+
+
+</html>
