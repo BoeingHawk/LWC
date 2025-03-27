@@ -1,2 +1,29 @@
-Best Hoisting Explanation: https://www.freecodecamp.org/news/what-is-hoisting-in-javascript-3/
+// Best Hoisting Explanation: https://www.freecodecamp.org/news/what-is-hoisting-in-javascript-3/
 
+//Hoisting in functions in JS
+
+
+//normal function
+
+
+function printHello() {
+    console.log("Hello World");
+}
+
+printHello()
+
+
+// Output: Hello World
+
+
+_____________________________________
+
+//example of hoisting in functions 
+
+greetings()
+
+function greetings(){
+    console.log('Hello Pulkit!')
+}
+
+// Output: Hello World
