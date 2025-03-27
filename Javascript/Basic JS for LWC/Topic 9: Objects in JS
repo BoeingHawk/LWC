@@ -18,6 +18,7 @@ const person = {
 };
 
 document.getElementById("demo").innerHTML = person;
+document.getElementById("demo").innerHTML = person.name + " " +person.age + " " + person.city;
 
 //console.log(person);
 
@@ -30,5 +31,9 @@ document.getElementById("demo").innerHTML = person;
 </html>
 
 
-//output: [object Object] 
+//output: 
+
+[object Object] 
+Pulkit 26 BLR
+
 //because only object is getting printed, but in console output will be different, it will show the entire object along with the properties.
