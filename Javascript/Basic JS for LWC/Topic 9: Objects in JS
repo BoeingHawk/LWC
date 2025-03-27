@@ -28,3 +28,7 @@ document.getElementById("demo").innerHTML = person;
 
 
 </html>
+
+
+//output: [object Object] 
+//because only object is getting printed, but in console output will be different
