@@ -4,8 +4,6 @@
 
 //const also has block scope
 
-
-
 let greet = "Hello"; //here scope is global because declared at the top
 
 var greet1 = "Hello1"; //global scope by default for var
