@@ -67,14 +67,12 @@ country = "USA";  // ❌ TypeError: Assignment to constant variable
 💡 **Best Practice:** Use `const` **whenever possible** unless you need to change the variable later.
 
 ---
-
 ## **4️⃣ When to Use What? (Best Practices)**
 ✅ Use **`const`** for values that never change (e.g., API keys, default settings).  
 ✅ Use **`let`** for variables that might change (e.g., loop counters, user inputs).  
 ❌ **Avoid `var`** completely (outdated, bad scoping).  
 
 ---
-
 ### **5️⃣ Real-World Example: Form Data Handling**
 
 function handleFormSubmission() {
