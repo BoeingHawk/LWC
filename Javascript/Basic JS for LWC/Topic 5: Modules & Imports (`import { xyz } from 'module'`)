@@ -4,9 +4,6 @@
 Modules allow us to break JavaScript code into **separate files**, making it more organized and reusable. Using **ES6 Modules**, we can:
 ✅ Export functions, objects, or variables from one file.
 ✅ Import them into another file.
-
-
-
 ## **2️⃣ Exporting & Importing in JavaScript**
 
 ### **A. Named Export & Import** (Used when exporting multiple items)
@@ -24,7 +21,6 @@ console.log(multiply(2, 3)); // 6
 ✅ **Use curly braces** `{}` while importing named exports.
 
 ---
-
 ### **B. Default Export & Import** (Used when exporting only one item)
 #### **Exporting (`greet.js`)**
 
