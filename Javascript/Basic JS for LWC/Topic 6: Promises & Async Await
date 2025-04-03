@@ -1,7 +1,7 @@
 ## **Topic 6: Promises & Async/Await**
 
-JavaScript is **asynchronous**, meaning it can execute multiple tasks **without waiting** for one to finish before starting another. To handle asynchronous operations, we use **Promises** and **Async/Await**.
-
+JavaScript is **asynchronous**, meaning it can execute multiple tasks **without waiting** for one to finish before starting another. 
+To handle asynchronous operations, we use **Promises** and **Async/Await**.
 ---
 
 ## **1️⃣ What is a Promise?**  
