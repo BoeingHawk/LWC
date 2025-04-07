@@ -41,7 +41,6 @@ console.log(name);  // Pulkit
 💡 **Best Practice:** **Never use `var`. Always use `let` or `const`.**
 
 ---
-
 ### **Example 2: `let` (Recommended)**
 
 console.log(age); // ❌ ReferenceError: Cannot access 'age' before initialization
@@ -52,7 +51,6 @@ console.log(age); // ✅ 26
 1. `console.log(age);` gives **ReferenceError** because `let` is hoisted but **not initialized**.  
 2. `let age = 26;` initializes `age`.  
 3. `console.log(age);` now works and prints `26`.  
-
 ---
 
 ### **Example 3: `const` (Best for Constants)**
