@@ -15,7 +15,6 @@ printHello()
 
 // Output: Hello World
 
-
 _____________________________________
 
 //example of hoisting in functions 
