@@ -8,7 +8,8 @@ Template literals are a modern way to handle strings in JavaScript. They allow:
 
 Unlike regular strings (`""` or `''`), template literals use **backticks** (`` ` ``).
 
----
+--
+
 
 ### **2️⃣ Syntax & Basic Usage**
 
