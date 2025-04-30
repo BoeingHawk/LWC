@@ -1,5 +1,4 @@
 **Lightning Web Components (LWC) - Beginner's Guide**
-
 ---
 
 ## **1. What is LWC?**
@@ -190,7 +189,6 @@ export default class ContactList extends LightningElement {
    - [Lightning Web Components Basics](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics)  
 2️⃣ **Practice by Building Small Components.**  
 3️⃣ **Use Salesforce Playground or Developer Edition for Hands-on Coding.**  
-
 ---
 
 **🔹 Summary**
