@@ -1,0 +1,17 @@
+<template>
+
+<lightning-card title="Get City Name from Zip Code">
+<div class="slds-var-p-around_medium">
+    <lightning-input label = 'Enter Zip Code' value={zipCode} onchange={handleZipChange}></lightning-input>
+    <lightning-button label = 'Get City Name' onclick={handleClick} class="slds-var-m-top_medium" ></lightning-button>
+
+    <template if:true={cityName}>
+        <p class="slds-var-m-top_medium"> <strong>City:</strong> {cityName}</p> 
+    </template>
+
+    
+
+</div>
+</lightning-card>    
+
+</template>    
