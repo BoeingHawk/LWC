@@ -1,0 +1,6 @@
+// Task: Fetch data using 3rd party open API and show the data on the UI, using LWC component and a Screen Flow.
+//Topics Covered in this task:
+ //Connecting API using POSTMAN
+ //Creating an LWC Component and using Imperative APEX method to call an APEX class from LWC component.
+ //Screen Flow
+//Integration
