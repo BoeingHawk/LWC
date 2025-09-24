@@ -1,1 +1,45 @@
 
+DATA BINDING IN LWC
+
+Data binding is the process of connecting your JavaScript data (properties/variables) with your HTML template (UI) so that when data changes, the UI updates (and sometimes vice versa). 
+
+Scope: Within the same component (JS ↔ HTML).
+In LWC, there are two types of data binding:
+
+
+One-way binding (JS → HTML)
+
+
+Data flows from the JavaScript controller to the HTML template.
+If the JS property changes, the UI reflects the new value.
+Example: displaying greeting text, rendering values in HTML.
+
+
+
+Two-way binding (JS ↔ HTML)
+
+
+Data flows both ways: from JS to HTML and back (when a user types or changes a value).
+Achieved using event handling (not automatic like in Aura).
+
+
+
+In order to achieve Data Binding follow the below steps:
+
+Create Project in VS Code
+Connect & Authorize Org 
+Create LWC Component in VS Code
+Make Changes in HTML File
+Make Changes in JS File (remember to make changes within the {} brackets)
+If using an Apex Class, use the @AuraEnabled(cacheable=true) annotation to expose the class to the component, make sure to import the class in the JS file and deploy the class to the Source Org as well
+Expose the component in the meta.xml file and add targets
+Deploy and Test
+
+NOTES:
+
+Wherever you see {} curly brackets, understand it is JS code being used or called
+We don’t need to use let or var, instead use “this.variableName”
+In Two-Way-Data-Binding : most of the time there will be a onchange event that will happen and this can be handled by having a method in JS
+event notation will be event.taget.value 
+Example: this.searchKey = event.taget.value
+In HTML file, root tag/starting tag is always <template> and closing tag is </template>
