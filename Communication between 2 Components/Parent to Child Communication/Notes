@@ -1,0 +1,21 @@
+Created two components:
+
+One Parent Component and other Child Component.
+
+
+childComponent.html 
+<template> <p>Child Component</p> <p>Mom Says: {message}!</p> </template> 
+
+childComponent.js 
+
+import { LightningElement,api } from 'lwc'; 
+export default class ChildComponent extends LightningElement { @api message; } 
+
+
+parentComponent.html 
+<template> <p>Parent Component</p> <c-child-component message={message}></c-child-component> </template> 
+
+parentComponent.js 
+import { LightningElement } from 'lwc'; 
+export default class ParentComponent extends LightningElement { message="Son come fast, it's time for dinner"; }
+
