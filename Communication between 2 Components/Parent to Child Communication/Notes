@@ -21,3 +21,5 @@ export default class ParentComponent extends LightningElement { message="Son com
 
 
 
+
+
