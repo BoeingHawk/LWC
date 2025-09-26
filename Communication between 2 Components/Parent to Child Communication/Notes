@@ -19,3 +19,5 @@ parentComponent.js
 import { LightningElement } from 'lwc'; 
 export default class ParentComponent extends LightningElement { message="Son come fast, it's time for dinner"; }
 
+
+
